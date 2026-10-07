@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guia do cliente | MAB Group</title>
+<meta name="description" content="Depois do sim: as 9 etapas da sua jornada com a Mab, da criação do grupo até as campanhas ativas.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Instrument+Serif:ital@0;1&family=Figtree:wght@300..600&display=swap" rel="stylesheet">
+
+<script>document.documentElement.classList.add('js');</script>
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  html { line-height: 1.5; -webkit-text-size-adjust: 100%; }
+  body, h1, h2, p, ol { margin: 0; }
+  ol { padding: 0; list-style: none; }
+  h1, h2 { font-size: inherit; font-weight: inherit; }
+  img, svg { display: block; }
+  body { font-family: Figtree, system-ui, sans-serif; }
+
+  .sprite { position: absolute; }
+  .wrap { max-width: 1120px; margin-inline: auto; padding-inline: 16px; }
+  .hero { padding-top: 32px; text-align: center; }
+  .rule { margin-inline: auto; }
+  .rule--top { margin-top: 16px; }
+  .rule--foot { margin-top: 20px; }
+  .brand--top { font-size: 1rem; }
+  .brand--foot { margin-top: 16px; font-size: .875rem; }
+  .hero-title { font-family: "DM Serif Display", Didot, serif; margin-top: 24px; }
+  .hero-sub { font-family: "Instrument Serif", Georgia, serif; margin-top: 8px; }
+  .hero-lede { margin-top: 8px; }
+  .deadline { display: flex; align-items: center; gap: 16px; max-width: 860px; margin: 24px auto 0; padding: 12px 20px; text-align: left; }
+  .deadline-icon { width: 32px; height: 32px; flex-shrink: 0; color: var(--gold); }
+  .foot { padding: 40px 0 48px; text-align: center; }
+  .closing { font-family: "Instrument Serif", Georgia, serif; }
+  @media (min-width: 640px) {
+    .wrap { padding-inline: 32px; }
+    .hero { padding-top: 40px; }
+    .brand--top { font-size: 1.25rem; }
+    .brand--foot { font-size: 1.125rem; }
+    .deadline { gap: 20px; padding-inline: 32px; }
+    .deadline-icon { width: 36px; height: 36px; }
+    .foot { padding-top: 48px; }
+  }
+  :root {
+    --paper: #FBF8F1;
+    --pine: #0D3324;
+    --ink: #14211B;
+    --moss: #3F4D46;
+    --gold: #C29A4B;
+    --gold-soft: #E3CFA0;
+    --champagne: #F6EEDA;
+    --sage: #DDE6D4;
+    --spring: cubic-bezier(.2, .9, .25, 1.18);
+    --corridor: 104px;
+    --walker-h: 176px;
+  }
+
+  html { background: var(--paper); }
+  body {
+    background:
+      radial-gradient(90rem 40rem at 50% -8rem, #FFFDF8 0%, rgba(255, 253, 248, 0) 70%),
+      radial-gradient(50rem 60rem at -10% 45%, rgba(227, 207, 160, .16) 0%, rgba(227, 207, 160, 0) 70%),
+      radial-gradient(50rem 60rem at 110% 75%, rgba(221, 230, 212, .38) 0%, rgba(221, 230, 212, 0) 70%),
+      var(--paper);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .brand { letter-spacing: .32em; font-weight: 400; color: #2B332F; }
+  .rule { width: 56px; height: 1.5px; background: var(--gold); }
+
+  .hero-title {
+    font-size: clamp(3.5rem, 13.5vw, 7.75rem);
+    line-height: .95;
+    letter-spacing: -.03em;
+    font-weight: 400;
+    color: var(--pine);
+  }
+  .hero-sub { font-size: clamp(2.25rem, 7vw, 3.9rem); line-height: 1.05; letter-spacing: -.02em; }
+  .hero-lede { font-size: clamp(1.125rem, 3.2vw, 1.75rem); font-weight: 300; color: #1F2924; }
+
+  .deadline {
+    background: linear-gradient(#FAF3E2, var(--champagne));
+    border: 1px solid var(--gold-soft);
+    border-radius: 999px;
+    box-shadow: 0 1px 0 #fff inset, 0 14px 30px -18px rgba(150, 116, 48, .45), 0 3px 8px -4px rgba(150, 116, 48, .2);
+    font-size: clamp(.95rem, 2.3vw, 1.25rem);
+    font-weight: 300;
+    line-height: 1.4;
+  }
+  .deadline strong { font-family: "DM Serif Display", serif; font-weight: 400; color: var(--pine); font-size: 1.2em; }
+  .deadline .divider { width: 1px; align-self: stretch; background: var(--gold-soft); }
+
+  /* Stage: the journey */
+  .stage { position: relative; padding-top: 140px; padding-left: 64px; }
+  .steps { position: relative; z-index: 1; display: grid; gap: 28px; }
+
+  .step {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto auto 1fr;
+    column-gap: 12px;
+    align-items: start;
+    padding: 16px 24px 16px 14px;
+    border-radius: 40px;
+    background: linear-gradient(#FFFEFB, #F9F4EA);
+    border: 1px solid rgba(255, 255, 255, .95);
+    box-shadow:
+      0 1px 0 #fff inset,
+      0 22px 44px -22px rgba(128, 100, 48, .34),
+      0 6px 14px -8px rgba(128, 100, 48, .18);
+  }
+  .step-icon {
+    grid-row: 1 / span 3;
+    align-self: center;
+    width: 56px; height: 56px;
+    display: grid; place-items: center;
+    border-radius: 50%;
+    color: var(--pine);
+    background: radial-gradient(circle at 35% 28%, #FBF7EC, #EFE8D6);
+    box-shadow: 0 1px 0 #fff inset, 0 8px 16px -8px rgba(128, 100, 48, .4);
+    margin-right: 4px;
+  }
+  .step-icon svg { width: 28px; height: 28px; }
+  .step-num {
+    width: 28px; height: 28px;
+    display: grid; place-items: center;
+    border-radius: 50%;
+    background: var(--pine);
+    box-shadow: 0 0 0 1.5px var(--gold-soft), 0 6px 12px -6px rgba(13, 51, 36, .7);
+    color: #fff;
+    font-family: "DM Serif Display", serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1;
+  }
+  .step-title {
+    font-family: "Instrument Serif", Georgia, serif;
+    font-weight: 400;
+    font-size: 1.55rem;
+    line-height: 1.08;
+    letter-spacing: -.015em;
+    color: var(--ink);
+    align-self: center;
+  }
+  .step-text {
+    grid-column: 3;
+    margin-top: 4px;
+    font-size: .95rem;
+    font-weight: 300;
+    line-height: 1.4;
+    color: var(--moss);
+    max-width: 28ch;
+    text-wrap: balance;
+  }
+  .done {
+    grid-column: 3;
+    justify-self: start;
+    margin-top: 10px;
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 4px 16px 4px 5px;
+    border-radius: 999px;
+    background: var(--sage);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, .8) inset;
+    color: var(--pine);
+    font-size: .72rem;
+    font-weight: 500;
+    letter-spacing: .14em;
+  }
+  .done svg { width: 20px; height: 20px; padding: 3px; border-radius: 50%; background: var(--pine); color: #fff; }
+
+  .step--final {
+    border-radius: 28px;
+    background: linear-gradient(#EDEFE1, #E6E9D9);
+    border: 1.5px solid var(--gold-soft);
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, .8) inset,
+      0 30px 60px -28px rgba(13, 51, 36, .35),
+      0 8px 18px -10px rgba(128, 100, 48, .3);
+  }
+  .step--final .step-icon { color: var(--gold); position: relative; }
+  .step--final .step-text { max-width: 46ch; color: #26332C; }
+
+  /* Reveal as the walker reaches each step */
+  .js .step {
+    opacity: .3;
+    transform: translate3d(0, 14px, 0) scale(.985);
+    transition: opacity .5s ease, transform .7s var(--spring);
+  }
+  .js .step.is-on { opacity: 1; transform: none; }
+
+  /* Path */
+  .path-svg { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 2; pointer-events: none; overflow: visible; }
+  .path-track { fill: none; stroke: var(--gold-soft); stroke-width: 1.5; opacity: .55; }
+  .path-progress { fill: none; stroke: var(--gold); stroke-width: 2; stroke-linecap: round; }
+  .path-dot {
+    transform-box: fill-box; transform-origin: center;
+    transform: scale(.6); opacity: .5;
+    transition: transform .5s var(--spring), opacity .4s ease;
+  }
+  .path-dot.is-on { transform: scale(1); opacity: 1; }
+
+  /* Walker */
+  .walker {
+    position: absolute; left: 0; top: 0; z-index: 3;
+    height: var(--walker-h);
+    aspect-ratio: 276 / 708;
+    pointer-events: none;
+    will-change: transform;
+    display: none;
+  }
+  .js .walker { display: block; }
+  .walker-flip { height: 100%; transition: transform .35s var(--spring); transform-origin: 50% 100%; }
+  .walker.is-left .walker-flip { transform: scaleX(-1); }
+  .walker-bob { height: 100%; transform-origin: 50% 100%; }
+  .walker.is-walking .walker-bob { animation: bob .52s ease-in-out infinite; }
+  .walker img { height: 100%; width: auto; display: block; filter: drop-shadow(0 10px 10px rgba(128, 100, 48, .22)); }
+  .walker::after {
+    content: ""; position: absolute; left: 12%; right: 12%; bottom: -4px; height: 10px;
+    border-radius: 50%;
+    background: radial-gradient(closest-side, rgba(90, 70, 30, .28), rgba(90, 70, 30, 0));
+  }
+  @keyframes bob {
+    0%, 100% { transform: translate3d(0, 0, 0) rotate(-1.4deg); }
+    50% { transform: translate3d(0, -4px, 0) rotate(1.4deg); }
+  }
+
+  /* Confetti on the last step */
+  .confetti { position: absolute; left: 50%; top: 42%; width: 0; height: 0; }
+  .confetti i {
+    position: absolute; width: 7px; height: 7px; border-radius: 2px;
+    background: var(--c, var(--gold));
+    opacity: 0;
+  }
+  .step--final.is-on .confetti i { animation: pop 1.3s var(--d, 0s) cubic-bezier(.15, .8, .3, 1) both; }
+  @keyframes pop {
+    0% { transform: translate3d(0, 0, 0) rotate(0) scale(.4); opacity: 0; }
+    15% { opacity: 1; }
+    100% { transform: translate3d(var(--x), var(--y), 0) rotate(var(--r)) scale(1); opacity: 0; }
+  }
+
+  .closing { font-size: clamp(1.35rem, 3.6vw, 1.9rem); line-height: 1.25; letter-spacing: -.01em; }
+
+  @media (min-width: 860px) {
+    .stage { padding-top: 224px; padding-left: 0; }
+    .steps { gap: 30px; }
+    .step {
+      width: calc(50% - var(--corridor) / 2);
+      column-gap: 12px;
+      padding: 22px 30px 22px 22px;
+      border-radius: 72px;
+    }
+    .step:nth-child(even) { margin-left: auto; padding: 22px 22px 22px 30px; }
+    .step-icon { width: 78px; height: 78px; margin-right: 8px; }
+    .step-icon svg { width: 40px; height: 40px; }
+    .step-num { width: 34px; height: 34px; font-size: 19px; }
+    .step-title { font-size: 2.05rem; }
+    .step-text { font-size: 1.125rem; margin-top: 6px; }
+    .done { font-size: .8rem; }
+
+    .step--final, .step--final:nth-child(n) {
+      width: 100%;
+      margin: 26px 0 0;
+      padding: 34px 48px;
+      border-radius: 30px;
+      column-gap: 22px;
+    }
+    .step--final .step-icon { width: 140px; height: 140px; margin-right: 18px; }
+    .step--final .step-icon svg { width: 64px; height: 64px; }
+    .step--final .step-num { width: 50px; height: 50px; font-size: 28px; }
+    .step--final .step-title { font-size: 3.2rem; }
+    .step--final .step-text { font-size: 1.4rem; margin-top: 10px; }
+
+    .js .step:nth-child(odd) { transform: translate3d(-18px, 0, 0) scale(.985); }
+    .js .step:nth-child(even) { transform: translate3d(18px, 0, 0) scale(.985); }
+    .js .step--final:nth-child(n) { transform: translate3d(0, 18px, 0) scale(.985); }
+    .js .step.is-on:nth-child(n) { transform: none; }
+  }
+
+  @media (max-width: 859px) {
+    :root { --walker-h: 124px; }
+    .step { padding: 18px 20px 18px 16px; border-radius: 32px; column-gap: 10px; }
+    .step-icon { grid-row: 1; width: 44px; height: 44px; margin-right: 0; }
+    .step-icon svg { width: 22px; height: 22px; }
+    .step-num { align-self: center; }
+    .step-text, .done { grid-column: 1 / -1; }
+    .step-text { margin-top: 10px; max-width: 34ch; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .js .step, .js .step:nth-child(n) { opacity: 1; transform: none; transition: none; }
+    .path-dot { transition: none; }
+    .walker-flip { transition: none; }
+    .walker.is-walking .walker-bob { animation: none; }
+    .step--final.is-on .confetti i { animation: none; }
+  }
+</style>
+</head>
+
+<body>
+
+<svg width="0" height="0" class="sprite" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></g></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M7.5 12.5l3 3L16.5 9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-group" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3"/><path d="M6.5 19.5c0-3 2.5-5.2 5.5-5.2s5.500 2.200 5.500 5.200z"/><circle cx="5.300" cy="10.200" r="2.100"/><circle cx="18.700" cy="10.200" r="2.100"/><path d="M2.300 18.200c0-2.100 1.200-3.700 3.100-4.100M21.700 18.200c0-2.100-1.200-3.700-3.100-4.100"/></g></symbol>
+    <symbol id="i-form" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8.500 8h7M8.500 12h7M8.500 16h4.500"/></g></symbol>
+    <symbol id="i-compass" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15.800 8.200l-2.300 5.300-5.300 2.300 2.300-5.300z"/></g></symbol>
+    <symbol id="i-contract" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8V5a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h7"/><path d="M7.500 7.500h6M7.500 11.500h5M7.500 15.500h2.500"/><path d="M20.400 11.100a1.400 1.400 0 0 1 0 2l-6 6-2.700.700.700-2.700 6-6a1.400 1.400 0 0 1 2 0z"/></g></symbol>
+    <symbol id="i-key" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="15.500" r="4.200"/><path d="M11 12.500L20.500 3M16.500 7l2.500 2.500M13.800 9.700l2 2"/></g></symbol>
+    <symbol id="i-gear" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"><path d="M12.220 2h-.440a2 2 0 0 0-2 2v.180a2 2 0 0 1-1 1.730l-.430.250a2 2 0 0 1-2 0l-.150-.080a2 2 0 0 0-2.730.730l-.220.380a2 2 0 0 0 .730 2.730l.150.100a2 2 0 0 1 1 1.720v.510a2 2 0 0 1-1 1.740l-.150.090a2 2 0 0 0-.730 2.730l.220.380a2 2 0 0 0 2.730.730l.150-.080a2 2 0 0 1 2 0l.430.250a2 2 0 0 1 1 1.730V20a2 2 0 0 0 2 2h.440a2 2 0 0 0 2-2v-.180a2 2 0 0 1 1-1.730l.430-.250a2 2 0 0 1 2 0l.150.080a2 2 0 0 0 2.730-.730l.220-.390a2 2 0 0 0-.730-2.730l-.150-.080a2 2 0 0 1-1-1.740v-.500a2 2 0 0 1 1-1.740l.150-.090a2 2 0 0 0 .730-2.730l-.220-.380a2 2 0 0 0-2.730-.730l-.150.080a2 2 0 0 1-2 0l-.430-.250a2 2 0 0 1-1-1.730V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></g></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="13" r="8"/><circle cx="11" cy="13" r="4.500"/><circle cx="11" cy="13" r="1.200"/><path d="M11 13l9-9M17 3.500V7h3.500"/></g></symbol>
+    <symbol id="i-image" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="15.500" cy="9.500" r="1.600"/><path d="M3 17l5.500-5.500 4.500 4.500 2.500-2.500L21 18"/></g></symbol>
+    <symbol id="i-party" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"><path d="M5.800 11.300 2 22l10.700-3.790"/><path d="M4 3h.010M22 8h.010M15 2h.010M22 20h.010"/><path d="m22 2-2.240.750a2.900 2.900 0 0 0-1.960 3.120c.100.860-.570 1.630-1.450 1.630h-.380c-.860 0-1.600.600-1.760 1.440L14 10"/><path d="m22 13-.820-.330c-.860-.340-1.820.200-1.980 1.110c-.110.700-.720 1.220-1.430 1.220H17"/><path d="m11 2 .330.820c.340.860-.200 1.820-1.110 1.980C9.520 4.900 9 5.520 9 6.230V7"/><path d="M11 13c1.930 1.930 2.830 4.170 2 5-.830.830-3.070-.070-5-2-1.930-1.930-2.830-4.170-2-5 .830-.830 3.070.070 5 2Z"/></g></symbol>
+    <radialGradient id="dot-gold" cx="35%" cy="30%" r="75%">
+      <stop offset="0" stop-color="#F4E3B4"/><stop offset=".55" stop-color="#C9A257"/><stop offset="1" stop-color="#9C7A34"/>
+    </radialGradient>
+  </defs>
+</svg>
+
+<div class="wrap">
+
+  <header class="hero">
+    <p class="brand brand--top">MAB GROUP</p>
+    <div class="rule rule--top"></div>
+
+    <h1 class="hero-title">Guia do <em>cliente</em></h1>
+    <p class="hero-sub">Depois do sim...</p>
+    <p class="hero-lede">Sua jornada com a Mab começa aqui.</p>
+
+    <p class="deadline">
+      <svg class="deadline-icon" aria-hidden="true"><use href="#i-clock"/></svg>
+      <span class="divider" aria-hidden="true"></span>
+      <span>Essa jornada acontece em <strong>até 14 dias,</strong> se realizarmos cada passo juntos.</span>
+    </p>
+  </header>
+
+  <main class="stage" id="stage">
+    <svg class="path-svg" id="path-svg" aria-hidden="true">
+      <path class="path-track" id="path-track"/>
+      <path class="path-progress" id="path-progress"/>
+      <g id="path-dots"></g>
+    </svg>
+
+    <div class="walker" id="walker" aria-hidden="true">
+      <div class="walker-flip"><div class="walker-bob"><img src="personagem.png" alt="" width="276" height="708"></div></div>
+    </div>
+
+    <ol class="steps" id="steps">
+      <li class="step is-on">
+        <span class="step-icon"><svg aria-hidden="true"><use href="#i-group"/></svg></span>
+        <span class="step-num">1</span>
+        <h2 class="step-title">Criação do grupo</h2>
+        <p class="step-text">Nosso espaço de comunicação está pronto.</p>
+        <span class="done"><svg aria-hidden="true"><use href="#i-check"/></svg>CONCLUÍDO</span>
+      </li>
+      <li class="step">
+        <span class="step-icon"><svg aria-hidden="true"><use href="#i-form"/></svg></span>
+        <span class="step-num">2</span>
+        <h2 class="step-title">Formulário de entrada</h2>
+        <p class="step-text">Conte sobre sua empresa, seus objetivos e seu público.</p>
+      </li>
+      <li class="step">
+        <span class="step-icon"><svg aria-hidden="true"><use href="#i-compass"/></svg></span>
+        <span class="step-num">3</span>
+        <h2 class="step-title">Briefing de entrada</h2>
+        <p class="step-text">Vamos aprofundar as informações que guiarão o projeto.</p>
+      </li>
+      <li class="step">
+        <span class="step-icon"><svg aria-hidden="true"><use href="#i-contract"/></svg></span>
+        <span class="step-num">4</span>
+        <h2 class="step-title">Contratos</h2>
+        <p class="step-text">Formalizamos os detalhes da nossa parceria.</p>
+      </li>
+      <li class="step">
+        <span class="step-icon"><svg aria-hidden="true"><use href="#i-key"/></svg></span>
+        <span class="step-num">5</span>
+        <h2 class="step-title">Acessos solicitados</h2>
+        <p class="step-text">Hora de liberar os acessos necessários para começar.</p>
+      </li>
+      <li class="step">
+        <span class="step-icon"><svg aria-hidden="true"><use href="#i-gear"/></svg></span>
+        <span class="step-num">6</span>
+        <h2 class="step-title">Onboarding</h2>
+        <p class="step-text">Alinhamos a rotina, as etapas e os próximos passos.</p>
+      </li>
+      <li class="step">
+        <span class="step-icon"><svg aria-hidden="true"><use href="#i-target"/></svg></span>
+        <span class="step-num">7</span>
+        <h2 class="step-title">Aprovação da estratégia</h2>
+        <p class="step-text">Você conhece e aprova o plano para o seu negócio.</p>
+      </li>
+      <li class="step">
+        <span class="step-icon"><svg aria-hidden="true"><use href="#i-image"/></svg></span>
+        <span class="step-num">8</span>
+        <h2 class="step-title">Solicitações dos primeiros conteúdos</h2>
+        <p class="step-text">Organizamos os materiais para iniciar a produção.</p>
+      </li>
+      <li class="step step--final">
+        <span class="step-icon">
+          <svg aria-hidden="true"><use href="#i-party"/></svg>
+          <span class="confetti" aria-hidden="true">
+            <i style="--x:-74px;--y:-66px;--r:220deg;--d:0s"></i>
+            <i style="--x:-38px;--y:-96px;--r:-160deg;--d:.04s;--c:#0D3324"></i>
+            <i style="--x:8px;--y:-108px;--r:300deg;--d:.02s;--c:#E3CFA0"></i>
+            <i style="--x:52px;--y:-92px;--r:-240deg;--d:.07s"></i>
+            <i style="--x:88px;--y:-58px;--r:180deg;--d:.03s;--c:#0D3324"></i>
+            <i style="--x:104px;--y:-14px;--r:-200deg;--d:.09s;--c:#E3CFA0"></i>
+            <i style="--x:-96px;--y:-20px;--r:260deg;--d:.06s"></i>
+            <i style="--x:70px;--y:-118px;--r:-320deg;--d:.11s"></i>
+            <i style="--x:-58px;--y:-122px;--r:340deg;--d:.1s;--c:#E3CFA0"></i>
+            <i style="--x:26px;--y:-136px;--r:-280deg;--d:.13s;--c:#0D3324"></i>
+          </span>
+        </span>
+        <span class="step-num">9</span>
+        <h2 class="step-title">Campanhas ativas</h2>
+        <p class="step-text">Parabéns! Sua campanha foi ativada e seu perfil do Instagram já está sendo desenvolvido.</p>
+      </li>
+    </ol>
+  </main>
+
+  <footer class="foot">
+    <p class="closing">Cada etapa nos aproxima dessa conquista. <em>Vamos juntos!</em></p>
+    <div class="rule rule--foot"></div>
+    <p class="brand brand--foot">MAB GROUP</p>
+  </footer>
+</div>
+
+<script>
+(function () {
+  var stage = document.getElementById('stage');
+  var svg = document.getElementById('path-svg');
+  var track = document.getElementById('path-track');
+  var progress = document.getElementById('path-progress');
+  var dotsGroup = document.getElementById('path-dots');
+  var walker = document.getElementById('walker');
+  var list = document.getElementById('steps');
+  var steps = Array.prototype.slice.call(list.querySelectorAll('.step'));
+  var desktopQuery = window.matchMedia('(min-width: 860px)');
+  var reducedQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var SVG_NS = 'http://www.w3.org/2000/svg';
+  var SAMPLES = 480;
+
+  var total = 0, samples = [], nodeLens = [], dots = [];
+  var startY = 0, endY = 0, current = 0, target = 0, raf = 0, desktop = false;
+
+  function buildPath() {
+    desktop = desktopQuery.matches;
+    var W = stage.clientWidth, H = stage.offsetHeight;
+    var last = steps.length - 1;
+    var corridor = desktop ? 104 : 0;
+    var listTop = list.offsetTop;
+    var gutterX = 30;
+
+    var nodes = steps.map(function (el, i) {
+      var top = listTop + el.offsetTop, h = el.offsetHeight;
+      if (!desktop) return { x: gutterX + (i % 2 ? 9 : -9), y: top + h / 2 };
+      if (i === last) return { x: W / 2, y: top };
+      return { x: W / 2 + (i % 2 ? corridor / 2 : -corridor / 2), y: top + h / 2 };
+    });
+    var start = { x: desktop ? W / 2 : gutterX, y: listTop + steps[0].offsetTop - (desktop ? 26 : 14) };
+
+    var d = 'M' + start.x + ' ' + start.y, prev = start;
+    nodes.forEach(function (n) {
+      var mid = (prev.y + n.y) / 2;
+      d += ' C' + prev.x + ' ' + mid + ' ' + n.x + ' ' + mid + ' ' + n.x + ' ' + n.y;
+      prev = n;
+    });
+
+    svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+    track.setAttribute('d', d);
+    progress.setAttribute('d', d);
+    total = progress.getTotalLength();
+    progress.style.strokeDasharray = total;
+
+    samples = [];
+    for (var k = 0; k <= SAMPLES; k++) samples.push(progress.getPointAtLength(total * k / SAMPLES).y);
+    startY = start.y;
+    endY = nodes[last].y;
+    nodeLens = nodes.map(function (n) { return lengthAtY(n.y); });
+
+    dotsGroup.textContent = '';
+    dots = nodes.map(function (n) {
+      var c = document.createElementNS(SVG_NS, 'circle');
+      c.setAttribute('cx', n.x); c.setAttribute('cy', n.y);
+      c.setAttribute('r', desktop ? 7 : 5);
+      c.setAttribute('fill', 'url(#dot-gold)');
+      c.setAttribute('class', 'path-dot');
+      dotsGroup.appendChild(c);
+      return c;
+    });
+  }
+
+  // The path only moves downward, so y maps to a single length.
+  function lengthAtY(y) {
+    if (y <= samples[0]) return 0;
+    if (y >= samples[SAMPLES]) return total;
+    var lo = 0, hi = SAMPLES;
+    while (hi - lo > 1) { var m = (lo + hi) >> 1; if (samples[m] <= y) lo = m; else hi = m; }
+    var span = samples[hi] - samples[lo] || 1;
+    return total * (lo + (y - samples[lo]) / span) / SAMPLES;
+  }
+
+  function readTarget() {
+    var vh = window.innerHeight;
+    var stageTop = stage.getBoundingClientRect().top + window.scrollY;
+    var max = document.documentElement.scrollHeight - vh;
+    if (max <= 0) { target = total; return; }
+    var f = Math.min(1, Math.max(0, window.scrollY / max));
+    var a = Math.min(stageTop + startY, vh * 0.55);
+    var b = Math.max(stageTop + endY - max, vh * 0.55);
+    var focus = window.scrollY + a + (b - a) * f - stageTop;
+    target = lengthAtY(Math.min(endY, Math.max(startY, focus)));
+  }
+
+  function render() {
+    var pt = progress.getPointAtLength(current);
+    var w = walker.offsetWidth, h = walker.offsetHeight;
+    progress.style.strokeDashoffset = total - current;
+    // On desktop she keeps to the middle of the corridor so she never covers a card.
+    var mid = stage.clientWidth / 2;
+    var x = desktop ? mid + (pt.x - mid) * 0.3 : pt.x;
+    walker.style.transform = 'translate3d(' + (x - w / 2) + 'px,' + (pt.y - h + 4) + 'px,0)';
+
+    var nearest = 0, best = Infinity;
+    for (var i = 0; i < nodeLens.length; i++) {
+      var on = i === 0 || current >= nodeLens[i] - 4;
+      steps[i].classList.toggle('is-on', on);
+      dots[i].classList.toggle('is-on', on);
+      var gap = Math.abs(nodeLens[i] - current);
+      if (gap < best) { best = gap; nearest = i; }
+    }
+    walker.classList.toggle('is-left', desktop && nearest % 2 === 0 && nearest !== nodeLens.length - 1);
+  }
+
+  function tick() {
+    var diff = target - current;
+    if (reducedQuery.matches || Math.abs(diff) < 0.5) {
+      current = target;
+      walker.classList.remove('is-walking');
+      render();
+      raf = 0;
+      return;
+    }
+    current += diff * 0.13;
+    walker.classList.toggle('is-walking', Math.abs(diff) > 3);
+    render();
+    raf = requestAnimationFrame(tick);
+  }
+
+  function update() {
+    readTarget();
+    if (!raf) raf = requestAnimationFrame(tick);
+  }
+
+  function relayout() {
+    buildPath();
+    readTarget();
+    current = target;
+    render();
+  }
+
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', relayout);
+  window.addEventListener('load', relayout);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(relayout);
+  if ('ResizeObserver' in window) new ResizeObserver(relayout).observe(stage);
+  relayout();
+})();
+</script>
+</body>
+</html>
